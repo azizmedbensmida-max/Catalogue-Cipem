@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIPEM 2026 | Catalogue Officiel des Formations</title>
+  <meta name="description"
+    content="Catalogue officiel CIPEM 2026. 514 formations de pointe en Ingénierie, Énergie, HSE, Maintenance et Management.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mode-sheet-view">
+
+  <!-- Custom Orbit Cursor -->
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+  <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+  <!-- ================= TOP INTERACTIVE APPLICATION BAR ================= -->
+  <header class="app-topbar no-print">
+    <div class="topbar-brand">
+      <img src="Assets/images/cipem_official_logo.png" alt="CIPEM Logo Officiel" class="topbar-logo-img">
+      <!-- <div class="topbar-title-wrap">
+        <h1><span>CATALOGUE OFFICIEL DES FORMATIONS</span></h1>
+      </div> -->
+    </div>
+
+    <!-- Actions & View Mode Toggle -->
+    <div class="topbar-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switcher" title="Changer la langue / Switch Language">
+        <button type="button" class="lang-btn active" id="lang-fr-btn">FR</button>
+        <button type="button" class="lang-btn" id="lang-en-btn">EN</button>
+      </div>
+
+      <button type="button" id="toggle-view-btn" class="btn-action btn-view-toggle"
+        title="Basculer entre la vue écran fluide et la vue plaquette A4">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+          <line x1="8" y1="6" x2="16" y2="6"></line>
+          <line x1="8" y1="10" x2="16" y2="10"></line>
+        </svg>
+        <span id="view-mode-label">Vue Écran Fluide</span>
+      </button>
+
+      <button type="button" id="print-catalog-btn" class="btn-action btn-print"
+        title="Exporter en document PDF A4 prêt à l'impression">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span class="btn-print-full">Imprimer / Exporter PDF</span>
+        <span class="btn-print-short">Imprimer PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= QUICK FILTER TABS ================= -->
+  <!-- <nav class="filter-tabs-bar no-print">
+    <button type="button" class="filter-tab active" data-filter="all">
+      Tous les Modules <span class="tab-badge" id="total-courses-count">411</span>
+    </button>
+    <button type="button" class="filter-tab" data-filter="elec">
+      Électrique &amp; Instrumentation (P. 4-6)
+    </button>
+    <button type="button" class="filter-tab" data-filter="meca">
+      Mécanique, Soudage &amp; Fluides (P. 7)
+    </button>
+    <button type="button" class="filter-tab" data-filter="btp">
+      BTP &amp; Maintenance (P. 8-10)
+    </button>
+    <button type="button" class="filter-tab" data-filter="logiciels">
+      Logiciels CAO &amp; Process (P. 11-12)
+    </button>
+    <button type="button" class="filter-tab" data-filter="hse">
+      HSE, Qualité &amp; Sécurité (P. 13-14)
+    </button>
+    <button type="button" class="filter-tab" data-filter="finance">
+      Finance, Fiscalité &amp; Gestion (P. 15-19)
+    </button>
+    <button type="button" class="filter-tab" data-filter="management">
+      Management, RH &amp; Marchés (P. 20-25)
+    </button>
+  </nav> -->
+
+  <!-- ================= MASTER CATALOGUE DOCUMENT ================= -->
+  <main class="catalog-container">
+
+    <!-- ================= PAGE 1: PRESTIGIOUS CORPORATE COVER (A4 EXACT) ================= -->
+    <section class="a4-sheet cover-page-layout" id="page-cover">
+      <!-- Top White Band (Selectable Text & Smaller Logo) -->
+      <header class="cover-html-top">
+        <img src="Assets/images/cipem_official_logo_noborder.png" alt="CIPEM Logo Officiel" class="cover-top-logo">
+        <div class="cover-top-reg">
+          <span class="reg-label">N° d’enregistrement Formation</span>
+          <span class="reg-number">11-1372-15</span>
+        </div>
+      </header>
+
+      <!-- Center Energy Facility Artwork -->
+      <div class="cover-html-center">
+        <img src="Assets/images/cipem_catalog_cover_2026_fr.jpg" alt="Catalogue Formation CIPEM 2026"
+          class="cover-art-img" id="cover-artwork-img">
+      </div>
+
+      <!-- Bottom White Band (Selectable Text & Balanced Proportions) -->
+      <footer class="cover-html-bottom">
+        <div class="cover-bottom-row-top">
+          <div class="legal-ids">
+            <div><span class="text-muted-lbl">Matricule fiscal :</span> <strong>1322330N/A/M/000</strong></div>
+            <div><span class="text-muted-lbl">Registre de commerce :</span> <strong>1322330N</strong></div>
+          </div>
+        </div>
+
+        <hr class="cover-bottom-divider">
+
+        <div class="cover-bottom-row-contacts">
+          <div class="contact-col">
+            <div><span class="text-muted-lbl">Email :</span> <a
+                href="mailto:formation@cipem.com.tn"><strong>formation@cipem.com.tn</strong></a></div>
+            <div><span class="text-muted-lbl">Web :</span> <a href="https://www.cipem.com.tn" target="_blank"
+                rel="noopener"><strong>www.cipem.com.tn</strong></a></div>
+          </div>
+
+          <div class="contact-col">
+            <div><span class="text-muted-lbl">Tél :</span> <strong>+216 71 35 30 78 / 71 25 49 78</strong></div>
+            <div><span class="text-muted-lbl">Mobile :</span> <strong>+216 98 64 55 45</strong></div>
+          </div>
+
+          <div class="contact-col address-col">
+            <strong class="addr-title">24 Avenue Cyrus Legrand le passage</strong>
+            <span class="addr-city">1001 Tunis, Tunisie</span>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ================= PAGE 2: SOMMAIRE GÉNÉRAL (PARTIE 1 • MODULES 1 À 20) ================= -->
+    <section class="a4-sheet sommaire-sheet" id="page-sommaire-1">
+      <div class="page-running-header">
+        <img src="Assets/images/cipem_official_logo_noborder.png" alt="CIPEM Logo Officiel" class="running-logo">
+        <div class="running-header-official">
+          <span class="rh-tagline">ETUDES - PILOTAGE - FORMATIONS</span>
+          <span class="rh-reg">Numéro d’enregistrement Formation : <strong>11-1372-15</strong></span>
+        </div>
+      </div>
+
+      <div class="section-headline">
+        <span class="badge-section-num"></span>
+        <h2 class="title-large">SOMMAIRE GÉNÉRAL DES FORMATIONS </h2>
+      </div>
+
+      <div class="sommaire-grid-2col">
+        <a href="#sec-1" class="sommaire-row">
+          <span class="som-num">01.</span>
+          <span class="som-title">HABILITATION ELECTRIQUE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 04</span>
+        </a>
+        <a href="#sec-2" class="sommaire-row">
+          <span class="som-num">02.</span>
+          <span class="som-title">INSTALLATION ELECTRIQUE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 05</span>
+        </a>
+        <a href="#sec-3" class="sommaire-row">
+          <span class="som-num">03.</span>
+          <span class="som-title">INSTALLATION PHOTOVOLTAIQUE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 06</span>
+        </a>
+        <a href="#sec-4" class="sommaire-row">
+          <span class="som-num">04.</span>
+          <span class="som-title">INSTALLATIONS ELECTRONIQUE &amp; INSTRUMENTATION</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 06</span>
+        </a>
+        <a href="#sec-5" class="sommaire-row">
+          <span class="som-num">05.</span>
+          <span class="som-title">MECANIQUE INDUSTRIELLE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 07</span>
+        </a>
+        <a href="#sec-6" class="sommaire-row">
+          <span class="som-num">06.</span>
+          <span class="som-title">SOUDAGE ET MECANO-SOUDAGE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 07</span>
+        </a>
+        <a href="#sec-7" class="sommaire-row">
+          <span class="som-num">07.</span>
+          <span class="som-title">HYDRAULIQUE ET PNEUMATIQUE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 07</span>
+        </a>
+        <a href="#sec-8" class="sommaire-row">
+          <span class="som-num">08.</span>
+          <span class="som-title">THERMIQUE ENERGETIQUE, CLIMATISATION &amp; FROID</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 08</span>
+        </a>
+        <a href="#sec-9" class="sommaire-row">
+          <span class="som-num">09.</span>
+          <span class="som-title">GENIE CIVIL &amp; BTP</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 08</span>
+        </a>
+        <a href="#sec-10" class="sommaire-row">
+          <span class="som-num">10.</span>
+          <span class="som-title">INCENDIE &amp; SECURITE DES BATIMENTS</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 09</span>
+        </a>
+        <a href="#sec-11" class="sommaire-row">
+          <span class="som-num">11.</span>
+          <span class="som-title">MAINTENANCE INDUSTRIELLE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 10</span>
+        </a>
+        <a href="#sec-12" class="sommaire-row">
+          <span class="som-num">12.</span>
+          <span class="som-title">LEVAGE - MANUTENTION</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 11</span>
+        </a>
+        <a href="#sec-13" class="sommaire-row">
+          <span class="som-num">13.</span>
+          <span class="som-title">Logiciel de conception AUTOCAD</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 11</span>
+        </a>
+        <a href="#sec-14" class="sommaire-row">
+          <span class="som-num">14.</span>
+          <span class="som-title">Logiciel de conception mécanique CATIA</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 11</span>
+        </a>
+        <a href="#sec-15" class="sommaire-row">
+          <span class="som-num">15.</span>
+          <span class="som-title">Logiciel de conception mécanique SOLIDWORKS</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 11</span>
+        </a>
+        <a href="#sec-16" class="sommaire-row">
+          <span class="som-num">16.</span>
+          <span class="som-title">Logiciel simulation process : HYSYS</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 11</span>
+        </a>
+        <a href="#sec-17" class="sommaire-row">
+          <span class="som-num">17.</span>
+          <span class="som-title">Logiciel de calcul câble BT : CANECO BT</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 12</span>
+        </a>
+        <a href="#sec-18" class="sommaire-row">
+          <span class="som-num">18.</span>
+          <span class="som-title">Logiciel de calcul câble MT : CANECO MT</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 12</span>
+        </a>
+        <a href="#sec-19" class="sommaire-row">
+          <span class="som-num">19.</span>
+          <span class="som-title">INFORMATIQUE &amp; SYSTEMES D'INFORMATION</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 12</span>
+        </a>
+        <a href="#sec-20" class="sommaire-row">
+          <span class="som-num">20.</span>
+          <span class="som-title">HYGIENE SECURITE - ENVIRONNEMENT (HSE)</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 13</span>
+        </a>
+      </div>
+
+      <div class="page-running-footer-full">
+        <div class="footer-row-primary">
+          <span class="f-item"><strong>Adresse :</strong> 24 Rue Cyrus le Grand, Le Passage, 1002 Tunis</span>
+          <span class="f-item"><strong>E-Mail :</strong> <a
+              href="mailto:formation@cipem.com.tn">formation@cipem.com.tn</a></span>
+          <span class="f-item"><strong>Web :</strong> <a href="https://www.cipem.com.tn" target="_blank"
+              rel="noopener">www.cipem.com.tn</a></span>
+        </div>
+        <div class="footer-row-secondary">
+          <span class="f-item"><strong>Tél :</strong> +216 71 35 30 78 / +216 71 25 49 78</span>
+          <span class="f-item"><strong>Mobile :</strong> +216 98 64 55 45</span>
+          <span class="f-item"><strong>Fax :</strong> +216 71 35 30 78</span>
+          <span class="f-page-num">Page 2 / 25</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 3: SOMMAIRE GÉNÉRAL (PARTIE 2 • MODULES 21 À 39) ================= -->
+    <section class="a4-sheet sommaire-sheet" id="page-sommaire-2">
+      <div class="page-running-header">
+        <img src="Assets/images/cipem_official_logo_noborder.png" alt="CIPEM Logo Officiel" class="running-logo">
+        <div class="running-header-official">
+          <span class="rh-tagline">ETUDES - PILOTAGE - FORMATIONS</span>
+          <span class="rh-reg">Numéro d’enregistrement Formation : <strong>11-1372-15</strong></span>
+        </div>
+      </div>
+
+      <div class="section-headline">
+        <span class="badge-section-num"></span>
+        <h2 class="title-large">SOMMAIRE GÉNÉRAL DES FORMATIONS </h2>
+      </div>
+
+      <div class="sommaire-grid-2col">
+        <a href="#sec-21" class="sommaire-row">
+          <span class="som-num">21.</span>
+          <span class="som-title">QUALITE &amp; AUDIT (API &amp; ISO)</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 14</span>
+        </a>
+        <a href="#sec-22" class="sommaire-row">
+          <span class="som-num">22.</span>
+          <span class="som-title">PRODUCTION INDUSTRIELLE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 14</span>
+        </a>
+        <a href="#sec-23" class="sommaire-row">
+          <span class="som-num">23.</span>
+          <span class="som-title">SECURITE PROCEDES</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 14</span>
+        </a>
+        <a href="#sec-24" class="sommaire-row">
+          <span class="som-num">24.</span>
+          <span class="som-title">APPROVISIONNEMENT &amp; LOGISTIQUE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 15</span>
+        </a>
+        <a href="#sec-25" class="sommaire-row">
+          <span class="som-num">25.</span>
+          <span class="som-title">COMMERCIAL &amp; RECOUVREMENT</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 15</span>
+        </a>
+        <a href="#sec-26" class="sommaire-row">
+          <span class="som-num">26.</span>
+          <span class="som-title">FINANCE INTERNATIONALE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 15</span>
+        </a>
+        <a href="#sec-27" class="sommaire-row">
+          <span class="som-num">27.</span>
+          <span class="som-title">JURIDIQUE D'ENTREPRISE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 16</span>
+        </a>
+        <a href="#sec-28" class="sommaire-row">
+          <span class="som-num">28.</span>
+          <span class="som-title">FISCALITE DES ENTREPRISES</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 16</span>
+        </a>
+        <a href="#sec-29" class="sommaire-row">
+          <span class="som-num">29.</span>
+          <span class="som-title">GESTION FINANCIERE &amp; TRESORERIE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 17</span>
+        </a>
+        <a href="#sec-30" class="sommaire-row">
+          <span class="som-num">30.</span>
+          <span class="som-title">COMPTABILITE FINANCIERE ET ANALYTIQUE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 18</span>
+        </a>
+        <a href="#sec-31" class="sommaire-row">
+          <span class="som-num">31.</span>
+          <span class="som-title">CONTROLE DE GESTION</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 19</span>
+        </a>
+        <a href="#sec-32" class="sommaire-row">
+          <span class="som-num">32.</span>
+          <span class="som-title">AFFAIRES JURIDIQUES ET FONCIERES</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 20</span>
+        </a>
+        <a href="#sec-33" class="sommaire-row">
+          <span class="som-num">33.</span>
+          <span class="som-title">CREATION D’ENTREPRISE ET GESTION DES PROJETS</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 20</span>
+        </a>
+        <a href="#sec-34" class="sommaire-row">
+          <span class="som-num">34.</span>
+          <span class="som-title">COMMERCIAL ET MARKETING</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 21</span>
+        </a>
+        <a href="#sec-35" class="sommaire-row">
+          <span class="som-num">35.</span>
+          <span class="som-title">RESSOURCES HUMAINES ET FORMATION</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 22</span>
+        </a>
+        <a href="#sec-36" class="sommaire-row">
+          <span class="som-num">36.</span>
+          <span class="som-title">MANAGEMENT STRATEGIQUE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 23</span>
+        </a>
+        <a href="#sec-37" class="sommaire-row">
+          <span class="som-num">37.</span>
+          <span class="som-title">AUDIT INTERNE</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 23</span>
+        </a>
+        <a href="#sec-38" class="sommaire-row">
+          <span class="som-num">38.</span>
+          <span class="som-title">MARCHÉS PUBLICS</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 24</span>
+        </a>
+        <a href="#sec-39" class="sommaire-row">
+          <span class="som-num">39.</span>
+          <span class="som-title">COMMUNICATION &amp; ARCHIVAGE (GEID)</span>
+          <span class="som-leader"></span>
+          <span class="som-page">P. 25</span>
+        </a>
+      </div>
+
+      <div class="page-running-footer-full">
+        <div class="footer-row-primary">
+          <span class="f-item"><strong>Adresse :</strong> 24 Rue Cyrus le Grand, Le Passage, 1002 Tunis</span>
+          <span class="f-item"><strong>E-Mail :</strong> <a
+              href="mailto:formation@cipem.com.tn">formation@cipem.com.tn</a></span>
+          <span class="f-item"><strong>Web :</strong> <a href="https://www.cipem.com.tn" target="_blank"
+              rel="noopener">www.cipem.com.tn</a></span>
+        </div>
+        <div class="footer-row-secondary">
+          <span class="f-item"><strong>Tél :</strong> +216 71 35 30 78 / +216 71 25 49 78</span>
+          <span class="f-item"><strong>Mobile :</strong> +216 98 64 55 45</span>
+          <span class="f-item"><strong>Fax :</strong> +216 71 35 30 78</span>
+          <span class="f-page-num">Page 3 / 25</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DYNAMIC MATRICES (5 CENTRES OF EXCELLENCE) ================= -->
+    <div id="dynamic-centres-container">
+      <!-- Injected by app.js with clean structured A4 page blocks -->
+    </div>
+
+    <!-- Search No-Results Feedback -->
+    <div id="no-results-box"
+      style="display:none; text-align:center; padding:3rem; background:white; border-radius:10px; margin:2rem 0; border:1px solid #CBD5E1;">
+      <h3 style="color:var(--cipem-navy); margin-bottom:0.5rem;">Aucun module ne correspond à vos critères</h3>
+      <p style="color:var(--text-secondary);">Essayez un mot clé comme « HYSYS », « Habilitation », « API », « Caneco »,
+        ou réinitialisez la recherche.</p>
+    </div>
+
+  </main>
+
+  <!-- Script Modules -->
+  <script src="courses-data.js"></script>
+  <script src="courses-data-en.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

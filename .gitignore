@@ -1,0 +1,27 @@
+# Scratch directory (temporary extraction scripts, tests, intermediate crops)
+scratch/
+
+# Python cache & temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local environment & logs
+.env
+*.log
+
+# Backup & duplicate asset files
+Assets/images/*OLD*
+Assets/images/*copy*
+Assets/images/*_17921619*.jpg
